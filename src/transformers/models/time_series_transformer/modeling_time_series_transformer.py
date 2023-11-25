@@ -1455,7 +1455,7 @@ class TimeSeriesTransformerForPrediction(TimeSeriesTransformerPreTrainedModel):
         if config.loss == "nll":
             self.loss = nll
         else:
-            raise ValueError(f"Unknown loss function {config.loss}")
+            self.loss = config.loss
 
         # Initialize weights of distribution_output and apply final processing
         self.post_init()
